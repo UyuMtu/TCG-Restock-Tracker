@@ -1,6 +1,6 @@
 """
 TCG Restock & Price Tracker
-Checks Pokémon Center, Virgin Megastore (.ae/.om/.qa), and eBay
+Checks Virgin Megastore (.ae/.om/.qa), Amazon, and eBay
 for sealed product restocks and price drops.
 """
 
@@ -8,7 +8,6 @@ import json
 import os
 import yaml
 from datetime import datetime
-from tracker.scrapers.pokemon_center import check_pokemon_center
 from tracker.scrapers.virgin_megastore import check_virgin_megastore
 from tracker.scrapers.ebay import check_ebay
 from tracker.scrapers.amazon import check_amazon
@@ -84,51 +83,6 @@ def main():
 
     print(f"\n🔍 TCG Tracker running at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} UTC")
     print("=" * 60)
-
-    # ── Pokémon Center ───────────────────────────────────────────
-    pc_products = config.get("products", {}).get("pokemon_center", [])
-    if pc_products:
-        print(f"\n📦 Checking Pokémon Center ({len(pc_products)} product(s))...")
-        for product in pc_products:
-            result = check_pokemon_center(product["url"], product["name"])
-            key = f"pc_{product['url']}"
-            prev = state.get(key, {})
-            max_price = product.get("max_price_usd")
-
-            if result.get("error"):
-                print(f"  ⚠️  {product['name']}: {result['error']}")
-                continue
-
-            price_str = f"${result['price']:.2f}" if result["price"] else "N/A"
-            status = "✅ IN STOCK" if result["in_stock"] else "❌ Out of stock"
-            print(f"  {product['name']}: {status} | {price_str}")
-
-            # Restock alert
-            if result["in_stock"] and not prev.get("in_stock"):
-                if not max_price or (result["price"] and result["price"] <= max_price):
-                    alerts.append({
-                        "type": "restock",
-                        "store": "Pokémon Center",
-                        "name": product["name"],
-                        "price": price_str,
-                        "url": product["url"],
-                    })
-
-            # Price drop alert
-            if result["in_stock"] and prev.get("in_stock"):
-                dropped, pct = check_price_drop(prev.get("price"), result.get("price"), threshold)
-                if dropped:
-                    alerts.append({
-                        "type": "price_drop",
-                        "store": "Pokémon Center",
-                        "name": product["name"],
-                        "old_price": f"${prev['price']:.2f}",
-                        "new_price": price_str,
-                        "pct": round(pct, 1),
-                        "url": product["url"],
-                    })
-
-            state[key] = result
 
     # ── Virgin Megastore ─────────────────────────────────────────
     for region in ["ae", "om", "qa"]:
