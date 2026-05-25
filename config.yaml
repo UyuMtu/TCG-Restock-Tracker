@@ -1,0 +1,224 @@
+# ============================================================
+#  TCG Restock Tracker — Configuration File
+# ============================================================
+#  Edit this file to add/remove products and set your
+#  notification preferences.
+#
+#  ⚠️  DO NOT put your webhook URLs or tokens here.
+#      Those go in GitHub Secrets (see README for how).
+# ============================================================
+
+settings:
+  # Alert me when a price drops by at least this percentage
+  price_drop_threshold_percent: 5
+
+  # How often GitHub Actions checks (this is just a label for you — 
+  # the actual schedule is set in .github/workflows/tracker.yml)
+  check_interval_minutes: 30
+
+# ── Products to track ─────────────────────────────────────────
+#
+#  For each product, provide:
+#    name        → A friendly name you'll see in alerts
+#    url         → The full product page URL
+#    max_price_* → (Optional) Only alert if price is AT OR BELOW this
+#                  Useful to avoid alerts for overpriced scalped stock
+#
+# ─────────────────────────────────────────────────────────────
+
+products:
+
+  # ── Virgin Megastore UAE (prices in AED) ────────────────────
+  virgin_megastore_ae:
+    - name: "Ascended Heroes ETB"
+      url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-me2-5-ascended-heroes-elite-trainer-box/p/1129024"
+      # No max_price — alert on ANY restock regardless of price
+
+    # Add more UAE products here:
+    # - name: "Ascended Heroes Blister"
+    #   url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-trainers-2-pack-blister-assortment---includes-1-/p/1120775"
+
+    # - name: "Ascended Heroes Booster Bundle"
+    #   url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me2-5-ascended-heroes-booster-bundle/p/1134625"
+
+    # - name: "Ascended Heroes EX Box"
+    #   url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me2-5-ascended-heroes-ex-box-pack-of-10-/p/1134626"
+
+    # - name: "Chaos Rising Blister"
+    #   url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me04-chaos-rising-blister-pack-pack-of-3-/p/1134630"
+
+    # - name: "Chaos Rising ETB"
+    #   url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me04-chaos-rising-elite-trainer-box/p/1134629"
+
+    # - name: "Chaos Rising Sleeve"
+    #   url: "https://www.virginmegastore.ae/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-me04-chaos-rising-sleeve-booster-packs/p/1145344"
+
+  # ── Virgin Megastore Oman (prices in OMR) ───────────────────
+  virgin_megastore_om:
+    - name: "Ascended Heroes ETB"
+      url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-me2-5-ascended-heroes-elite-trainer-box/p/1129024"
+      # No max_price — alert on ANY restock regardless of price
+
+    # Add more Oman products here:
+    # - name: "Ascended Heroes Blister"
+    #   url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-trainers-2-pack-blister-assortment---includes-1-/p/1120775"
+
+    # - name: "Ascended Heroes Booster Bundle"
+    #   url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me2-5-ascended-heroes-booster-bundle/p/1134625"
+
+    # - name: "Ascended Heroes EX Box"
+    #   url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me2-5-ascended-heroes-ex-box-pack-of-10-/p/1134626"
+
+    # - name: "Chaos Rising Sleeves"
+    #   url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-me04-chaos-rising-sleeve-booster-packs/p/1145344"
+
+    # - name: "Chaos Rising Blister"
+    #   url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me04-chaos-rising-blister-pack-pack-of-3-/p/1134630"
+
+    # - name: "Chaos Rising ETB"
+    #   url: "https://www.virginmegastore.om/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me04-chaos-rising-elite-trainer-box/p/1134629"
+
+  # ── Virgin Megastore Qatar (prices in QAR) ──────────────────
+  virgin_megastore_qa:
+    - name: "Chaos Rising ETB"
+      url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me04-chaos-rising-elite-trainer-box/p/1134629"
+      # No max_price — alert on ANY restock regardless of price
+
+    # Add more Qatar products here:
+    # - name: "Chaos Rising Blister"
+    #   url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me04-chaos-rising-blister-pack-pack-of-3-/p/1134630"
+
+    # - name: "Chaos Rising Sleeves"
+    #   url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-me04-chaos-rising-sleeve-booster-packs/p/1145344"
+
+    # - name: "Ascended Heroes ETB"
+    #   url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-me2-5-ascended-heroes-elite-trainer-box/p/1129024"
+
+    # - name: "Ascended Heroes Blister"
+    #   url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg-trainers-2-pack-blister-assortment---includes-1-/p/1120775"
+
+    # - name: "Ascended Heroes Booster Bundle"
+    #   url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me2-5-ascended-heroes-booster-bundle/p/1134625"
+
+    # - name: "Ascended Heroes EX Box"
+    #   url: "https://www.virginmegastore.qa/en/toys/games-puzzles/card-games/trading-cards-stickers/pokemon-tcg---me2-5-ascended-heroes-ex-box-pack-of-10-/p/1134626"
+
+  # ── Amazon UAE (prices in AED) ──────────────────────────────
+  amazon_ae:
+    - name: "Prismatic Evolutions ETB"
+      url: "https://www.amazon.ae/dp/B0DLPL7LC5"
+      max_price: 800  # Only alert if 800 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Pin Collection"
+    #   url: "https://www.amazon.ae/dp/B0G71VXSWN"
+    #   max_price: 300  # Only alert if 300 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Emboar EX Box"
+    #   url: "https://www.amazon.ae/dp/B0G72QBTBJ"
+    #   max_price: 250  # Only alert if 250 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Prismatic Poster Collection"
+    #   url: "https://www.amazon.ae/dp/B0DLQJ613B"
+    #   max_price: 250  # Only alert if 250 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "151 Alakazam Box"
+    #   url: "https://www.amazon.ae/dp/B0C8Y8MJ36"
+    #   max_price: 300  # Only alert if 300 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Blister"
+    #   url: "https://www.amazon.ae/dp/B0G547KBNB"
+    #   max_price: 120  # Only alert if 120 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Meganium EX Box"
+    #   url: "https://www.amazon.ae/dp/B0G72SPRP6"
+    #   max_price: 250  # Only alert if 250 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Black Bolt Blister"
+    #   url: "https://www.amazon.ae/dp/B0F6PV2967"
+    #   max_price: 150  # Only alert if 150 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Black/White 12 Pack Collection"
+    #   url: "https://www.amazon.ae/dp/B0G882HQVC"
+    #   max_price: 850  # Only alert if 850 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Destined Rivals Blister"
+    #   url: "https://www.amazon.ae/dp/B0F2BDKJ9Q"
+    #   max_price: 150  # Only alert if 150 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Gengar Sticker"
+    #   url: "https://www.amazon.ae/dp/B0G3CS9CLQ"
+    #   max_price: 150  # Only alert if 150 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Phantasmal Flames Booster Bundle"
+    #   url: "https://www.amazon.ae/dp/B0FPLLR939"
+    #   max_price: 250  # Only alert if 250 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Gardevoir 10 pack"
+    #   url: "https://www.amazon.ae/dp/B0FPLLR939"
+    #   max_price: 700  # Only alert if 700 AED or below
+
+    # Add more Amazon UAE products here:
+    # - name: "Ascended Heroes Charizard Sticker"
+    #   url: "https://www.amazon.ae/dp/B0G4XK6SVT"
+    #   max_price: 150  # Only alert if 150 AED or below
+
+  # ── Amazon US (prices in USD) ────────────────────────────────
+  amazon_com:
+    - name: "Prismatic Evolutions ETB"
+      url: "https://www.amazon.com/dp/B0DHKBTKVH"
+      max_price: 60  # Only alert if $60 or below
+
+    # Add more Amazon US products here:
+    # - name: "Your Product Name"
+    #   url: "https://www.amazon.com/dp/XXXXXXXXXX"
+    #   max_price: 100
+
+  # ── Amazon UK (prices in GBP) ────────────────────────────────
+  amazon_co_uk:
+    - name: "Prismatic Evolutions ETB"
+      url: "https://www.amazon.co.uk/dp/B0DHKBTKVH"
+      max_price: 45  # Only alert if £45 or below
+
+    # Add more Amazon UK products here:
+    # - name: "Your Product Name"
+    #   url: "https://www.amazon.co.uk/dp/XXXXXXXXXX"
+    #   max_price: 50
+
+  # ── eBay (prices in USD, ships to AE by default) ─────────────
+  #
+  #  keywords       → What to search for on eBay
+  #  max_price_usd  → Maximum total price in USD to alert on
+  #  condition      → new | like_new | used | any
+  #  ship_to_country → ISO country code (AE = UAE, OM = Oman, etc.)
+  #
+  ebay:
+    - name: "Prismatic Evolutions ETB"
+      keywords: "Pokemon Prismatic Evolutions Elite Trainer Box sealed"
+      max_price_usd: 80
+      condition: "new"
+      ship_to_country: "AE"
+
+    - name: "Prismatic Evolutions Booster Bundle"
+      keywords: "Pokemon Prismatic Evolutions Booster Bundle sealed"
+      max_price_usd: 40
+      condition: "new"
+      ship_to_country: "AE"
+
+    # Add more eBay searches here:
+    # - name: "Your Search Name"
+    #   keywords: "Pokemon XYZ sealed"
+    #   max_price_usd: 100
+    #   condition: "new"
+    #   ship_to_country: "AE"
