@@ -60,5 +60,19 @@
     "price": 292.0,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0FPLLR939"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0G72QBTBJ": {
+    "name": "Ascended Heroes Emboar EX Box",
+    "in_stock": true,
+    "price": 319.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0G72QBTBJ"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0C8Y8MJ36": {
+    "name": "151 Alakazam Box",
+    "in_stock": false,
+    "price": 655.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0C8Y8MJ36"
   }
 }
