@@ -102,5 +102,12 @@
     "price": null,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0G4XK6SVT"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0DLQJ613B": {
+    "name": "Prismatic Poster Collection",
+    "in_stock": false,
+    "price": 315.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0DLQJ613B"
   }
 }
