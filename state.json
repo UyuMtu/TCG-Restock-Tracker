@@ -55,7 +55,7 @@
     "url": "https://www.amazon.ae/dp/B0G72SPRP6"
   },
   "amazon_ae_https://www.amazon.ae/dp/B0FPLLR939": {
-    "name": "Phantasmal Flames Booster Bundle",
+    "name": "Ascended Heroes Gardevoir 10 pack",
     "in_stock": true,
     "price": 289.0,
     "currency": "AED",
@@ -64,7 +64,7 @@
   "amazon_ae_https://www.amazon.ae/dp/B0G72QBTBJ": {
     "name": "Ascended Heroes Emboar EX Box",
     "in_stock": true,
-    "price": 319.0,
+    "price": 327.0,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0G72QBTBJ"
   },
@@ -78,7 +78,7 @@
   "amazon_ae_https://www.amazon.ae/dp/B0DLPL7LC5": {
     "name": "Prismatic Evolutions ETB",
     "in_stock": false,
-    "price": null,
+    "price": 95.0,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0DLPL7LC5"
   },
@@ -91,23 +91,51 @@
   },
   "amazon_ae_https://www.amazon.ae/dp/B0G3CS9CLQ": {
     "name": "Ascended Heroes Gengar Sticker",
-    "in_stock": false,
-    "price": 302.0,
+    "in_stock": true,
+    "price": 212.0,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0G3CS9CLQ"
   },
   "amazon_ae_https://www.amazon.ae/dp/B0G4XK6SVT": {
     "name": "Ascended Heroes Charizard Sticker",
-    "in_stock": false,
-    "price": 274.0,
+    "in_stock": true,
+    "price": 392.0,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0G4XK6SVT"
   },
   "amazon_ae_https://www.amazon.ae/dp/B0DLQJ613B": {
     "name": "Prismatic Poster Collection",
-    "in_stock": false,
-    "price": 315.0,
+    "in_stock": true,
+    "price": 389.0,
     "currency": "AED",
     "url": "https://www.amazon.ae/dp/B0DLQJ613B"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0G71VXSWN": {
+    "name": "Ascended Heroes Pin Collection",
+    "in_stock": true,
+    "price": 444.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0G71VXSWN"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0G547KBNB": {
+    "name": "Ascended Heroes Blister",
+    "in_stock": true,
+    "price": 153.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0G547KBNB"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0F6PV2967": {
+    "name": "Black Bolt Blister",
+    "in_stock": true,
+    "price": 212.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0F6PV2967"
+  },
+  "amazon_ae_https://www.amazon.ae/dp/B0F2BDKJ9Q": {
+    "name": "Destined Rivals Blister",
+    "in_stock": true,
+    "price": 192.0,
+    "currency": "AED",
+    "url": "https://www.amazon.ae/dp/B0F2BDKJ9Q"
   }
 }
